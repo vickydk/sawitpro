@@ -38,29 +38,6 @@ func CreateMiddleware() ([]echo.MiddlewareFunc, error) {
 		&middleware.Options{
 			Options: openapi3filter.Options{
 				AuthenticationFunc: func(ctx context.Context, input *openapi3filter.AuthenticationInput) error {
-					//authHeader := input.RequestValidationInput.Request.Header.Get("Authorization")
-					//authHeaderParts := strings.Split(authHeader, " ")
-					//if len(authHeaderParts) != 2 || strings.ToLower(authHeaderParts[0]) != "bearer" {
-					//	return fmt.Errorf("token not found")
-					//} else {
-					//	tokenString := authHeaderParts[1]
-					//	claimsToken := &claims{}
-					//	token, _ := jwt.ParseWithClaims(tokenString, claimsToken, func(token *jwt.Token) (interface{}, error) {
-					//		return []byte(signingSecret), nil
-					//	})
-					//
-					//	if token == nil {
-					//		return fmt.Errorf("token not found")
-					//	}
-					//
-					//	if token.Valid && !checkTokenExpiry(claimsToken.StandardClaims.ExpiresAt) {
-					//		authdCtx := context.WithValue(input.RequestValidationInput.Request.Context(), "userUUID", claimsToken.UserUUID)
-					//		_ = input.RequestValidationInput.Request.WithContext(authdCtx)
-					//	} else {
-					//		return fmt.Errorf("token not found")
-					//	}
-					//}
-
 					return nil
 				},
 			},
